@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== DARK MODE STYLES ========== */
+body.dark-mode {
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+body.dark-mode .card,
+body.dark-mode .modal-content,
+body.dark-mode .dropdown-menu {
+  background: #16213e;
+  color: #ffffff;
+  border-color: #0f3460;
+}
+
+body.dark-mode .table {
+  color: #ffffff;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(15, 52, 96, 0.5);
+}
+
+body.dark-mode .bg-light,
+body.dark-mode .bg-white {
+  background: #0f3460 !important;
+}
+
+body.dark-mode .text-muted {
+  color: #a0a0a0 !important;
+}
+
+body.dark-mode .border,
+body.dark-mode .border-top,
+body.dark-mode .border-bottom,
+body.dark-mode .border-start,
+body.dark-mode .border-end {
+  border-color: #0f3460 !important;
+}
+
+body.dark-mode .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #0f3460;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: #0f3460;
+  color: #ffffff;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode .input-group-text {
+  background-color: #0f3460;
+  border-color: #1a2a4a;
+  color: #ffffff;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background-color: #1a2a4a;
+  color: #ffffff;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #888888;
+}
+
+body.dark-mode .dropdown-item {
+  color: #ffffff;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #0f3460;
+}
+
+body.dark-mode .list-group-item {
+  background-color: #16213e;
+  border-color: #0f3460;
+  color: #ffffff;
+}
+
+body.dark-mode .alert-light {
+  background-color: #0f3460;
+  color: #ffffff;
+}
+
+body.dark-mode .close {
+  color: #ffffff;
+}
+
+/* ========== SMOOTH TRANSITIONS ========== */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff9800, #e65100);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #e65100, #b71c1c);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ========== CARD HOVER EFFECTS ========== */
+.hover-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== GRADIENT TEXT ========== */
+.gradient-text {
+  background: linear-gradient(135deg, #ff9800, #e65100);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========== CUSTOM BUTTON STYLES ========== */
+.btn-gradient {
+  background: linear-gradient(135deg, #ff9800, #e65100);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #e65100, #b71c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 81, 0, 0.4);
+}
+
+/* ========== LOADING SPINNER ========== */
+.spinner-custom {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ff9800;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========== RESPONSIVE TABLE ========== */
+@media (max-width: 768px) {
+  .table-responsive-custom {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+/* ========== NOTIFICATION BADGE ========== */
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== STATUS COLORS ========== */
+.status-pending {
+  background-color: #ffc107;
+  color: #856404;
+}
+
+.status-inprogress {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.status-completed {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-draft {
+  background-color: #6c757d;
+  color: white;
+}
+
+.status-submitted {
+  background-color: #28a745;
+  color: white;
+}
+
+/* ========== PRIORITY COLORS ========== */
+.priority-high {
+  background-color: #dc3545;
+  color: white;
+}
+
+.priority-medium {
+  background-color: #ffc107;
+  color: #856404;
+}
+
+.priority-low {
+  background-color: #28a745;
+  color: white;
+}
+
+/* ========== GLASSMORPHISM EFFECT ========== */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== TOOLTIP STYLES ========== */
+.custom-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.custom-tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
